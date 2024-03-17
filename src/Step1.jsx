@@ -83,7 +83,7 @@ function PersonalInfo({ onNext, data }) {
           </div>
         </div>
       </div>
-      <div style={{ display: 'flex', marginTop: '400px' }}>
+      <div style={{ display: 'flex', marginTop: '20px' }}>
         <button type="button">Back</button>
         <button type="submit" style={{ backgroundColor: 'blue', color: 'white', marginLeft: '20px',borderRadius: '5px', border: 'blue' }}>Next Step</button>
       </div>
