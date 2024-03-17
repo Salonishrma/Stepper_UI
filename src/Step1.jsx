@@ -42,11 +42,11 @@ function PersonalInfo({ onNext, data }) {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <div style={{ display: 'flex', gap: '20px' }}>
           <div style={{ flex: 1, marginRight: '20px' }}>
-            <label>First Name</label><br/>
+            <label>First Name</label>
             <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
           </div>
           <div style={{ flex: 1 }}>
-            <label>Last Name</label><br/>
+            <label>Last Name</label>
             <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
           </div>
         </div>
@@ -83,9 +83,9 @@ function PersonalInfo({ onNext, data }) {
           </div>
         </div>
       </div>
-      <div style={{ display: 'flex', marginTop: '20px' }}>
+      <div style={{ display: 'flex', marginTop: '40px' }}>
         <button type="button">Back</button>
-        <button type="submit" style={{ backgroundColor: 'blue', color: 'white', marginLeft: '20px',borderRadius: '5px', border: 'blue' }}>Next Step</button>
+        <button type="submit" style={{ backgroundColor: 'blue', color: 'white', marginLeft: '20px', borderRadius: '5px', border: 'blue' }}>Next Step</button>
       </div>
     </form>
   );
