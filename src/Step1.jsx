@@ -42,21 +42,21 @@ function PersonalInfo({ onNext, data }) {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <div style={{ display: 'flex', gap: '20px' }}>
           <div style={{ flex: 1, marginRight: '20px' }}>
-            <label>First Name</label><br />
+            <label>First Name</label>
             <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
           </div>
           <div style={{ flex: 1 }}>
-            <label>Last Name</label><br />
+            <label>Last Name</label>
             <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
           </div>
         </div>
         <div style={{ display: 'flex', gap: '20px' }}>
           <div style={{ flex: 1, marginRight: '20px' }}>
-            <label>Phone Number</label><br />
+            <label>Phone Number</label>
             <input type="number" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
           </div>
           <div style={{ flex: 1 }}>
-            <label>Email Address</label><br />
+            <label>Email Address</label>
             <input type="email" name="emailAddress" value={formData.emailAddress} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
           </div>
         </div>
