@@ -42,7 +42,7 @@ function PersonalInfo({ onNext, data }) {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <div style={{ display: 'flex', gap: '20px' }}>
           <div style={{ flex: 1, marginRight: '20px' }}>
-            <label>First Name</label></br>
+            <label>First Name</label>
             <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
           </div>
           <div style={{ flex: 1 }}>
