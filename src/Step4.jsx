@@ -45,7 +45,7 @@ function UserPhoto() {
             </div>
           )}
 
-          <button type="submit" style={{ marginTop: '20px', backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Submit</button>
+          <button type="submit" style={{ position:"absolute",marginTop: '80px', marginLeft:"100px",backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Submit</button>
         </form>
       )}
     </div>
