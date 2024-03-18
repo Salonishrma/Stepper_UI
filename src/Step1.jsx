@@ -7,15 +7,13 @@ function PersonalInfo({ onNext, data }) {
     phoneNumber: '',
     emailAddress: '',
     country: 'India',
-    city: 'Jaipur',
+    city: 'Mumbai',
   });
 
   const [showFirstNameAlert, setShowFirstNameAlert] = useState(false);
   const [showLastNameAlert, setShowLastNameAlert] = useState(false);
   const [showPhoneNumberAlert, setShowPhoneNumberAlert] = useState(false);
   const [showEmailAlert, setShowEmailAlert] = useState(false);
-
- 
 
   useEffect(() => {
     if (data) {
@@ -28,40 +26,22 @@ function PersonalInfo({ onNext, data }) {
     setFormData({ ...formData, [name]: value });
   };
 
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateFormData(formData)) {
+      console.log("Form data submitted:", formData); 
       onNext(formData);
-      console.log("Form data submitted:", formData);
     } else {
       alert('Please fill in all fields.');
     }
   };
 
   const validateFormData = (formData) => {
-    if (!formData.firstName.trim()) {
-      setShowFirstNameAlert(true);
-    } else {
-      setShowFirstNameAlert(false);
-    }
-
-    if (!formData.lastName.trim()) {
-      setShowLastNameAlert(true);
-    } else {
-      setShowLastNameAlert(false);
-    }
-
-    if (!formData.phoneNumber.trim()) {
-      setShowPhoneNumberAlert(true);
-    } else {
-      setShowPhoneNumberAlert(false);
-    }
-
-    if (!formData.emailAddress.trim()) {
-      setShowEmailAlert(true);
-    } else {
-      setShowEmailAlert(false);
-    }
+    setShowFirstNameAlert(!formData.firstName.trim());
+    setShowLastNameAlert(!formData.lastName.trim());
+    setShowPhoneNumberAlert(!formData.phoneNumber.trim());
+    setShowEmailAlert(!formData.emailAddress.trim());
 
     return Object.values(formData).every((value) => value && value.trim() !== '');
   };
