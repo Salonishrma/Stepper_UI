@@ -49,11 +49,11 @@ function App() {
   const renderStep = () => {
     switch (currentState) {
       case 1:
-        return <PersonalInfo onNext={handlePersonalInfoNext} />;
+        return <PersonalInfo onNext={handlePersonalInfoNext} data={personalInfo} />;
       case 2:
-        return <Education onNext={handleEducationNext} />;
+        return <Education onNext={handleEducationNext} data={education}/>;
       case 3:
-        return <Experience onNext={handleExperienceNext} />;
+        return <Experience onNext={handleExperienceNext} data={experience}/>;
       case 4:
         return <UserPhoto />;
       default:
