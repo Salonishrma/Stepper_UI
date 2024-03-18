@@ -9,7 +9,7 @@ function App() {
   const [personalInfo, setPersonalInfo] = useState({});
   const [education, setEducation] = useState({});
   const [experience, setExperience] = useState({});
-
+ 
   const handlePersonalInfoNext = (formData) => {
     if (validateFormData(formData)) {
       setPersonalInfo(formData);
@@ -49,11 +49,11 @@ function App() {
   const renderStep = () => {
     switch (currentState) {
       case 1:
-        return <PersonalInfo onNext={handlePersonalInfoNext} data={personalInfo} />;
+        return <PersonalInfo onNext={handlePersonalInfoNext}  />;
       case 2:
-        return <Education onNext={handleEducationNext} data={education}/>;
+        return <Education onNext={handleEducationNext} data={education} />;
       case 3:
-        return <Experience onNext={handleExperienceNext} data={experience}/>;
+        return <Experience onNext={handleExperienceNext} data={experience} />;
       case 4:
         return <UserPhoto />;
       default:
