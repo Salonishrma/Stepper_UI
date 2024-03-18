@@ -11,7 +11,6 @@ function Step2({ onNext, data }) {
   const [showSchool2Alert, setShowSchool2Alert] = useState(false);
   const [showNewSchoolAlert, setShowNewSchoolAlert] = useState(false);
 
-  // useEffect hook to update form data when receiving new data as props
   useEffect(() => {
     if (data) {
       setFormData(data);
@@ -65,7 +64,7 @@ function Step2({ onNext, data }) {
             School 1
             <div>
               <input type="text" name="school1" value={formData.school1} onChange={handleChange} style={{ width: '50%', padding: '8px', display: 'block' }} />
-              {showSchool1Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill  School 1.</p>}
+              {showSchool1Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill in School 1.</p>}
             </div>
           </label>
         </div>
@@ -74,7 +73,7 @@ function Step2({ onNext, data }) {
             School 2
             <div>
               <input type="text" name="school2" value={formData.school2} onChange={handleChange} style={{ width: '50%', padding: '8px', display: 'block' }} />
-              {showSchool2Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill  School 2.</p>}
+              {showSchool2Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill in School 2.</p>}
             </div>
           </label>
         </div>
