@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function Step2({ onNext }) {
+function Step2({ onNext, data }) {
   const [formData, setFormData] = useState({
     school1: '',
     school2: '',
     newSchool: '',
   });
+
+  const [showSchool1Alert, setShowSchool1Alert] = useState(false);
+  const [showSchool2Alert, setShowSchool2Alert] = useState(false);
+  const [showNewSchoolAlert, setShowNewSchoolAlert] = useState(false);
+
+  // useEffect hook to update form data when receiving new data as props
+  useEffect(() => {
+    if (data) {
+      setFormData(data);
+    }
+  }, [data]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,6 +34,24 @@ function Step2({ onNext }) {
   };
 
   const validateFormData = (formData) => {
+    if (!formData.school1.trim()) {
+      setShowSchool1Alert(true);
+    } else {
+      setShowSchool1Alert(false);
+    }
+
+    if (!formData.school2.trim()) {
+      setShowSchool2Alert(true);
+    } else {
+      setShowSchool2Alert(false);
+    }
+
+    if (!formData.newSchool.trim()) {
+      setShowNewSchoolAlert(true);
+    } else {
+      setShowNewSchoolAlert(false);
+    }
+
     return Object.values(formData).every((value) => value && value.trim() !== '');
   };
 
@@ -36,6 +65,7 @@ function Step2({ onNext }) {
             School 1
             <div>
               <input type="text" name="school1" value={formData.school1} onChange={handleChange} style={{ width: '50%', padding: '8px', display: 'block' }} />
+              {showSchool1Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill  School 1.</p>}
             </div>
           </label>
         </div>
@@ -44,6 +74,7 @@ function Step2({ onNext }) {
             School 2
             <div>
               <input type="text" name="school2" value={formData.school2} onChange={handleChange} style={{ width: '50%', padding: '8px', display: 'block' }} />
+              {showSchool2Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill  School 2.</p>}
             </div>
           </label>
         </div>
@@ -52,11 +83,12 @@ function Step2({ onNext }) {
             New School
             <div>
               <input type="text" name="newSchool" value={formData.newSchool} onChange={handleChange} style={{ width: '50%', padding: '8px', display: 'block' }} placeholder="Add new School" />
+              {showNewSchoolAlert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill  New School.</p>}
             </div>
           </label>
         </div>
       </div>
-      <button type="submit" style={{ marginTop: '60px',position:'absolute',marginLeft:'80px',backgroundColor:'blue',borderRadius:'5px',border: 'blue',padding:'4px',color:'white'}}>Next Step</button>
+      <button type="submit" style={{ marginTop: '20px', backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '8px', color: 'white' }}>Next Step</button>
     </form>
   );
 }
