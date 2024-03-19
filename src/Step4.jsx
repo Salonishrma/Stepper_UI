@@ -6,7 +6,6 @@ function UserPhoto() {
   const [photoRequiredError, setPhotoRequiredError] = useState(false);
 
   useEffect(() => {
-    
     const savedImage = localStorage.getItem('uploadedImage');
     if (savedImage) {
       setUploadedImage(savedImage);
@@ -16,7 +15,6 @@ function UserPhoto() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (uploadedImage) {
-      
       localStorage.setItem('uploadedImage', uploadedImage);
       setSubmitted(true);
       setTimeout(() => {
@@ -39,7 +37,7 @@ function UserPhoto() {
   };
 
   return (
-    <div style={{ backgroundColor: 'rgba(240, 248, 255, 0.5)', borderRadius: '5px', padding: '20px', position: 'relative', width: 'fit-content', margin: 'auto' }}>
+    <div style={{backgroundColor: 'rgba(240, 248, 255, 0.5)', borderRadius: '5px', padding: '20px', position: 'relative', width: 'fit-content' }}>
       {submitted ? (
         <div style={{ textAlign: 'center' }}>
           <h2>Thank you for submitting!</h2>
@@ -47,25 +45,28 @@ function UserPhoto() {
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
+        
           <h2>User Photo</h2>
           <p>Upload your profile picture and show yourself.</p>
           <label>
             Add Your Photo:
             <input type="file" accept="image/*" onChange={handleImageChange} />
           </label>
-          
+         
           {photoRequiredError && (
             <p style={{ color: 'red' }}>Please upload a photo.</p>
           )}
 
           {uploadedImage && (
             <div style={{ marginTop: '20px', textAlign: 'center' }}>
-              <img src={uploadedImage} alt="Uploaded Preview" style={{ maxWidth: '50%', height: 'auto', borderRadius: '5px' }} />
+              <img src={uploadedImage} alt="Uploaded Preview" style={{ maxWidth: '50%', height: 'auto', borderRadius: '50%', border: '2px solid black' }} />
             </div>
           )}
-
-          <button type="submit" style={{ marginTop: '20px', backgroundColor: 'black', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Submit</button>
+           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+        <button type="submit" style={{ marginTop: '100px', backgroundColor: 'black', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Submit</button>
+        </div>
         </form>
+        
       )}
     </div>
   );
