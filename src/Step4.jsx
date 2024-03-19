@@ -29,7 +29,7 @@ function UserPhoto() {
   };
 
   return (
-    <div style={{ backgroundColor: '#f0f8ff', borderRadius: '5px', padding: '20px', position: 'relative' }}>
+    <div style={{ backgroundColor: 'rgba(240, 248, 255, 0.5)', borderRadius: '5px', padding: '2px', position: 'relative', width: '100%', height: '100%' }}>
       {submitted ? (
         <div style={{ textAlign: 'center' }}>
           <h2>Thank you for submitting!</h2>
