@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 function Experience({ onNext, data }) {
-  const [formData, setFormData] = useState({
-    experience1: '',
-    experience2: '',
-    position1: '',
-    position2: '',
-    additionalExperience: ''
+  const [formData, setFormData] = useState(() => {
+    const storedData = localStorage.getItem('experienceFormData');
+    return storedData ? JSON.parse(storedData) : {
+      experience1: '',
+      experience2: '',
+      position1: '',
+      position2: '',
+      additionalExperience: ''
+    };
   });
 
   const [showExperience1Alert, setShowExperience1Alert] = useState(false);
@@ -28,6 +31,7 @@ function Experience({ onNext, data }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateFormData(formData)) {
+      localStorage.setItem('experienceFormData', JSON.stringify(formData));
       onNext(formData);
       console.log("Form data submitted:", formData);
     }
