@@ -27,29 +27,13 @@ function Step2({ onNext, data }) {
     if (validateFormData(formData)) {
       onNext(formData);
       console.log("Form data submitted:", formData);
-    } else {
-      alert('Please fill in all fields.');
     }
   };
 
   const validateFormData = (formData) => {
-    if (!formData.school1.trim()) {
-      setShowSchool1Alert(true);
-    } else {
-      setShowSchool1Alert(false);
-    }
-
-    if (!formData.school2.trim()) {
-      setShowSchool2Alert(true);
-    } else {
-      setShowSchool2Alert(false);
-    }
-
-    if (!formData.newSchool.trim()) {
-      setShowNewSchoolAlert(true);
-    } else {
-      setShowNewSchoolAlert(false);
-    }
+    setShowSchool1Alert(!formData.school1.trim());
+    setShowSchool2Alert(!formData.school2.trim());
+    setShowNewSchoolAlert(!formData.newSchool.trim());
 
     return Object.values(formData).every((value) => value && value.trim() !== '');
   };
@@ -82,13 +66,12 @@ function Step2({ onNext, data }) {
             New School
             <div>
               <input type="text" name="newSchool" value={formData.newSchool} onChange={handleChange} style={{ width: '50%', padding: '8px', display: 'block' }} placeholder="Add new School" />
-              {showNewSchoolAlert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill  New School.</p>}
+              {showNewSchoolAlert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill in New School.</p>}
             </div>
           </label>
         </div>
       </div>
-      <button type="submit" style={{ backgroundColor: 'blue', color: 'white', marginLeft: '120px',position:"absolute", marginTop:"60px",padding: '5px',borderRadius: '5px', border: 'blue' }}>Next Step</button>
-
+      <button type="submit" style={{ backgroundColor: 'blue', color: 'white', marginLeft: '80px', position: "absolute", marginTop: "6px", padding: '5px', borderRadius: '5px', border: 'blue' }}>Next Step</button>
     </form>
   );
 }
