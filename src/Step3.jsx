@@ -1,6 +1,6 @@
-\import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-function Experience({ onNext, data }) {
+function Experience({ onNext }) {
   const [formData, setFormData] = useState({
     experience1: '',
     experience2: '',
@@ -13,12 +13,6 @@ function Experience({ onNext, data }) {
   const [showExperience2Alert, setShowExperience2Alert] = useState(false);
   const [showPosition1Alert, setShowPosition1Alert] = useState(false);
   const [showPosition2Alert, setShowPosition2Alert] = useState(false);
-
-  useEffect(() => {
-    if (data) {
-      setFormData(data);
-    }
-  }, [data]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -100,7 +94,7 @@ function Experience({ onNext, data }) {
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button type="submit" style={{ position:"absolute",marginTop: '60px',marginLeft:"-200px",backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '5px', color: 'white' }}>Next Step</button>
+          <button type="submit" style={{ position:"absolute",marginTop: '50px', backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '8px', color: 'white' }}>Next Step</button>
         </div>
       </div>
     </form>
