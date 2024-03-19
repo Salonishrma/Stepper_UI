@@ -9,7 +9,7 @@ function App() {
   const [personalInfo, setPersonalInfo] = useState({});
   const [education, setEducation] = useState({});
   const [experience, setExperience] = useState({});
- 
+
   const handlePersonalInfoNext = (formData) => {
     if (validateFormData(formData)) {
       setPersonalInfo(formData);
@@ -46,14 +46,15 @@ function App() {
       setCurrentState(currentState - 1);
     }
   };
+
   const renderStep = () => {
     switch (currentState) {
       case 1:
-        return <PersonalInfo onNext={handlePersonalInfoNext}  />;
+        return <PersonalInfo onNext={handlePersonalInfoNext} />;
       case 2:
-        return <Education onNext={handleEducationNext} data={education} />;
+        return <Education onNext={handleEducationNext}  />;
       case 3:
-        return <Experience onNext={handleExperienceNext} data={experience} />;
+        return <Experience onNext={handleExperienceNext}  />;
       case 4:
         return <UserPhoto />;
       default:
@@ -74,7 +75,7 @@ function App() {
       fontWeight: 'bold',
     };
   };
- 
+
   const stepMessages = {
     1: "Enter your personal information to get closer to companies",
     2: "Get to know better by adding your diploma, certificate, and education life.",
@@ -82,41 +83,41 @@ function App() {
     4: "Add your profile picture and let companies find you fast.",
   };
 
-  return ( 
-    <div style={{ border: '5px solid 	rgb(211,211,211)', borderRadius: '10px' }}>
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: '22%', padding: '20px', color: 'grey', borderRight: '2px solid #ccc', background: '#0818A8' }}>
-        <h1 style={{ color: 'white' }}>indeed</h1>
-        <div style={{ marginBottom: '20px', color: 'white'}}>
-          <p>Step {currentState}</p>
-          <p>{stepMessages[currentState]}</p>
+  return (
+    <div style={{ border: '5px solid rgb(211, 211, 211)', borderRadius: '10px' }}>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '22%', padding: '40px', color: 'grey', borderRight: '2px solid #ccc', background: '#0818A8' }}>
+          <h1 style={{ color: 'white' }}>indeed</h1>
+          <div style={{ marginBottom: '20px', color: 'white' }}>
+            <p>Step {currentState}</p>
+            <p>{stepMessages[currentState]}</p>
+          </div>
+          <ol style={{ listStyle: 'none', padding: 0 }}>
+            <li style={{ marginBottom: '10px', cursor: 'pointer', color: currentState >= 1 ? 'black' : 'white' }}>
+              <div style={getCircleStyle(1)}>1</div> Personal Information
+            </li>
+            <li style={{ marginBottom: '10px', cursor: 'pointer', color: currentState >= 2 ? 'black' : 'white' }}>
+              <div style={getCircleStyle(2)}>2</div> Education
+            </li>
+            <li style={{ marginBottom: '10px', cursor: 'pointer', color: currentState >= 3 ? 'black' : 'white' }}>
+              <div style={getCircleStyle(3)}>3</div> Work Experience
+            </li>
+            <li style={{ cursor: 'pointer', color: currentState >= 4 ? 'black' : 'white' }}>
+              <div style={getCircleStyle(4)}>4</div> User Photo
+            </li>
+          </ol>
         </div>
-        <ol style={{ listStyle: 'none', padding: 0 }}>
-          <li style={{ marginBottom: '10px', cursor: 'pointer', color: currentState >= 1 ? 'black' : 'white' }}>
-            <div style={getCircleStyle(1)}>1</div> Personal Information
-          </li>
-          <li style={{ marginBottom: '10px', cursor: 'pointer', color: currentState >= 2 ? 'black' : 'white' }}>
-            <div style={getCircleStyle(2)}>2</div> Education
-          </li>
-          <li style={{ marginBottom: '10px', cursor: 'pointer', color: currentState >= 3 ? 'black' : 'white' }}>
-            <div style={getCircleStyle(3)}>3</div> Work Experience
-          </li>
-          <li style={{ cursor: 'pointer', color: currentState >= 4 ? 'black' : 'white' }}>
-            <div style={getCircleStyle(4)}>4</div> User Photo
-          </li>
-        </ol>
-      </div>
-      <div style={{ flex: 1, padding: '20px' }}>
-        {renderStep()}
-        <div style={{ marginTop: '10px', display: 'flex',  }}>
-          {currentState > 1 && (
-            <button type="button" onClick={handlePrev} style={{ marginRight: '10px',marginTop:'50px' }}>
-              Back
-            </button>
-          )}
+        <div style={{ flex: 1, padding: '20px' }}>
+          {renderStep()}
+          <div style={{ marginTop: '10px', display: 'flex' }}>
+            {currentState > 1 && (
+              <button type="button" onClick={handlePrev} style={{ marginRight: '10px', marginTop: '50px' }}>
+                Back
+              </button>
+            )}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }
