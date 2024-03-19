@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 function Experience({ onNext, data }) {
@@ -78,8 +77,8 @@ function Experience({ onNext, data }) {
           <label htmlFor="additionalExperience">Experience 3</label><br />
           <input type="text" name="additionalExperience" value={formData.additionalExperience} onChange={handleChange} style={{ width: '100%', padding: '4px', border: '1px dashed #000' }} placeholder="Add new Experience" />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-      <button type="submit" style={{position:'relative',marginlft:'70px', backgroundColor: 'blue',padding:'5px',color: 'white', marginLeft: '20px',margintop:'170px', borderRadius: '5px', border: 'blue' }}>Next Step</button>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+          <button type="submit" style={{ backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '8px', color: 'white' }}>Next Step</button>
         </div>
       </div>
     </form>
