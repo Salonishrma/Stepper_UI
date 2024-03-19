@@ -84,16 +84,6 @@ function App() {
   };
 
   return (
-    <div style={{
-      backgroundImage: `url('https://cdn.pixabay.com/photo/2022/09/21/17/02/blue-background-7470781_640.jpg')`,
-      backgroundSize: 'auto 100%',
-      backgroundPosition: 'center',
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}>
       <div style={{ border: '5px solid #D3D3D3', borderRadius: '10px', background: 'rgba(255, 255, 255, 0.8)', width: '80%' }}>
         <div style={{ display: 'flex' }}>
           <div style={{ width: '22%', padding: '40px', color: 'grey', borderRight: '2px solid #ccc', background: 'rgb(96, 130, 182)' }}>
