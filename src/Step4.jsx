@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function UserPhoto() {
   const [submitted, setSubmitted] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
   const [photoRequiredError, setPhotoRequiredError] = useState(false);
 
+  useEffect(() => {
+    
+    const savedImage = localStorage.getItem('uploadedImage');
+    if (savedImage) {
+      setUploadedImage(savedImage);
+    }
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (uploadedImage) {
+      
+      localStorage.setItem('uploadedImage', uploadedImage);
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
