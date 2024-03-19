@@ -30,8 +30,6 @@ function Experience({ onNext, data }) {
     if (validateFormData(formData)) {
       onNext(formData);
       console.log("Form data submitted:", formData);
-    } else {
-      alert('Please fill in all fields.');
     }
   };
 
