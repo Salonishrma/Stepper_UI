@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+\import React, { useState, useEffect } from 'react';
 
 function Experience({ onNext, data }) {
   const [formData, setFormData] = useState({
@@ -100,7 +100,7 @@ function Experience({ onNext, data }) {
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button type="submit" style={{ marginTop: '20px', backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '8px', color: 'white' }}>Next Step</button>
+          <button type="submit" style={{ position:"absolute",marginTop: '60px',marginLeft:"-200px",backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '5px', color: 'white' }}>Next Step</button>
         </div>
       </div>
     </form>
