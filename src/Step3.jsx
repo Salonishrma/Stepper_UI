@@ -53,7 +53,7 @@ function Experience({ onNext, data }) {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ flex: 1, marginRight: '10px' }}>
-            <label htmlFor="experience1">Experience 1</label>
+            <label htmlFor="experience1">Experience1</label>
             <input type="text" name="experience1" value={formData.experience1} onChange={handleChange} style={{ width: '100%', padding: '4px' }} />
             {showExperience1Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill Experience 1.</p>}
           </div>
@@ -65,7 +65,7 @@ function Experience({ onNext, data }) {
         </div>
         <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ flex: 1, marginRight: '10px' }}>
-            <label htmlFor="experience2">Experience 2</label>
+            <label htmlFor="experience2">Experience2</label>
             <input type="text" name="experience2" value={formData.experience2} onChange={handleChange} style={{ width: '100%', padding: '4px' }} />
             {showExperience2Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill Experience 2.</p>}
           </div>
@@ -76,7 +76,7 @@ function Experience({ onNext, data }) {
           </div>
         </div>
         <div style={{ marginBottom: '20px', width: '60%' }}>
-          <label htmlFor="additionalExperience">Experience 3</label><br />
+          <label htmlFor="additionalExperience">Experience3</label><br />
           <input type="text" name="additionalExperience" value={formData.additionalExperience} onChange={handleChange} style={{ width: '100%', padding: '4px', border: '1px dashed #000' }} placeholder="Add new Experience" />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
