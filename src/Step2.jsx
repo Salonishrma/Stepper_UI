@@ -79,7 +79,7 @@ function Step2({ onNext, data }) {
           </label>
         </div>
       </div>
-      <button type="submit" style={{ backgroundColor: 'blue', color: 'white', marginLeft: '80px', position: "absolute", marginTop: "6px", padding: '5px', borderRadius: '5px', border: 'blue' }}>Next Step</button>
+      <button type="submit" style={{ backgroundColor: 'blue', color: 'white', marginLeft: '80px', position: "absolute",  padding: '5px', borderRadius: '5px', border: 'blue',marginTop:'60px'}}>Next Step</button>
     </form>
   );
 }
