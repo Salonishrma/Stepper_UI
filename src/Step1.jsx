@@ -38,8 +38,6 @@ function PersonalInfo({ onNext, data }) {
     if (validateFormData(formData)) {
       console.log("Form data submitted:", formData); 
       onNext(formData);
-    } else {
-      alert('Please fill in all fields.');
     }
   };
 
