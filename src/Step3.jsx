@@ -71,8 +71,8 @@ function Experience({ onNext }) {
           <label htmlFor="additionalExperience">Experience 3</label><br />
           <input type="text" name="additionalExperience" value={formData.additionalExperience} onChange={handleChange} style={{ width: '100%', padding: '4px', border: '1px dashed #000' }} placeholder="Add new Experience" />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-          <button type="submit" style={{ marginTop: '40px', backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '8px', color: 'white', width: '100%' }}>Next Step</button>
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+          <button type="submit" style={{position:"absolute",marginLeft:"90px", marginTop:"60px",backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Next Step</button>
         </div>
       </div>
     </form>
