@@ -94,7 +94,7 @@ function Experience({ onNext }) {
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button type="submit" style={{ position:"absolute",marginTop: '50px', backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '8px', color: 'white' }}>Next Step</button>
+          <button type="submit" style={{ position:"absolute",marginTop: '50px', backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Next Step</button>
         </div>
       </div>
     </form>
