@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
 
-function Experience({ onNext }) {
+import React, { useState, useEffect } from 'react';
+
+function Experience({ onNext, data }) {
   const [formData, setFormData] = useState({
     experience1: '',
     experience2: '',
@@ -13,6 +14,12 @@ function Experience({ onNext }) {
   const [showExperience2Alert, setShowExperience2Alert] = useState(false);
   const [showPosition1Alert, setShowPosition1Alert] = useState(false);
   const [showPosition2Alert, setShowPosition2Alert] = useState(false);
+
+  useEffect(() => {
+    if (data) {
+      setFormData(data);
+    }
+  }, [data]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -72,7 +79,7 @@ function Experience({ onNext }) {
           <input type="text" name="additionalExperience" value={formData.additionalExperience} onChange={handleChange} style={{ width: '100%', padding: '4px', border: '1px dashed #000' }} placeholder="Add new Experience" />
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-          <button type="submit" style={{position:"absolute",marginLeft:"90px", marginTop:"60px",backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Next Step</button>
+          <button type="submit" style={{ backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '8px', color: 'white' }}>Next Step</button>
         </div>
       </div>
     </form>
