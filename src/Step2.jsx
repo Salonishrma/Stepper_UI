@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 function Step2({ onNext, data }) {
-  const [formData, setFormData] = useState({
-    school1: '',
-    school2: '',
-    newSchool: '',
+  const [formData, setFormData] = useState(() => {
+    const storedData = localStorage.getItem('step2FormData');
+    return storedData ? JSON.parse(storedData) : {
+      school1: '',
+      school2: '',
+      newSchool: '',
+    };
   });
 
   const [showSchool1Alert, setShowSchool1Alert] = useState(false);
@@ -25,17 +28,22 @@ function Step2({ onNext, data }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateFormData(formData)) {
+      localStorage.setItem('step2FormData', JSON.stringify(formData));
       onNext(formData);
       console.log("Form data submitted:", formData);
     }
   };
 
   const validateFormData = (formData) => {
-    setShowSchool1Alert(!formData.school1.trim());
-    setShowSchool2Alert(!formData.school2.trim());
-    setShowNewSchoolAlert(!formData.newSchool.trim());
+    const isSchool1Valid = !!formData.school1.trim();
+    const isSchool2Valid = !!formData.school2.trim();
+    const isNewSchoolValid = !!formData.newSchool.trim();
 
-    return Object.values(formData).every((value) => value && value.trim() !== '');
+    setShowSchool1Alert(!isSchool1Valid);
+    setShowSchool2Alert(!isSchool2Valid);
+    setShowNewSchoolAlert(!isNewSchoolValid);
+
+    return isSchool1Valid && isSchool2Valid && isNewSchoolValid;
   };
 
   return (
