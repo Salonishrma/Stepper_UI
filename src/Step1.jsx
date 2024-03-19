@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
 function PersonalInfo({ onNext, data }) {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    phoneNumber: '',
-    emailAddress: '',
-    country: 'India',
-    city: 'Mumbai',
+  const [formData, setFormData] = useState(() => {
+    const storedData = localStorage.getItem('formData');
+    return storedData ? JSON.parse(storedData) : {
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
+      emailAddress: '',
+      country: 'India',
+      city: 'Mumbai',
+    };
   });
 
   const [showFirstNameAlert, setShowFirstNameAlert] = useState(false);
@@ -21,12 +24,15 @@ function PersonalInfo({ onNext, data }) {
     }
   }, [data]);
 
+  useEffect(() => {
+    localStorage.setItem('formData', JSON.stringify(formData));
+  }, [formData]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
- 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateFormData(formData)) {
@@ -58,6 +64,7 @@ function PersonalInfo({ onNext, data }) {
       <h1>Your Personal Information</h1>
       <p>Enter your personal information to get closer to companies</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        {/* Form fields */}
         <div style={{ display: 'flex', gap: '20px' }}>
           <div style={{ flex: 1, marginRight: '20px' }}>
             <label>First Name</label>
