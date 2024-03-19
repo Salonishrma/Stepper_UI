@@ -29,7 +29,7 @@ function UserPhoto() {
   };
 
   return (
-    <div style={{ backgroundColor: 'rgba(240, 248, 255, 255)', borderRadius: '5px', padding: '2px', position: 'relative', width: '100%', height: '100%' }}>
+    <div style={{ backgroundColor: 'rgba(240, 248, 255, 0.5)', borderRadius: '5px', padding: '20px', position: 'relative', width: 'fit-content', margin: 'auto' }}>
       {submitted ? (
         <div style={{ textAlign: 'center' }}>
           <h2>Thank you for submitting!</h2>
@@ -54,7 +54,7 @@ function UserPhoto() {
             </div>
           )}
 
-          <button type="submit" style={{ marginRight:"20px",marginTop: '100px', backgroundColor: 'black', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Submit</button>
+          <button type="submit" style={{ marginTop: '20px', backgroundColor: 'black', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Submit</button>
         </form>
       )}
     </div>
