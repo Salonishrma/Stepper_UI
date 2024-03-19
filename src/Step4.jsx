@@ -3,13 +3,18 @@ import React, { useState } from 'react';
 function UserPhoto() {
   const [submitted, setSubmitted] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [photoRequiredError, setPhotoRequiredError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 30000);
+    if (uploadedImage) {
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 30000);
+    } else {
+      setPhotoRequiredError(true);
+    }
   };
 
   const handleImageChange = (e) => {
@@ -39,13 +44,17 @@ function UserPhoto() {
             <input type="file" accept="image/*" onChange={handleImageChange} />
           </label>
           
+          {photoRequiredError && (
+            <p style={{ color: 'red' }}>Please upload a photo.</p>
+          )}
+
           {uploadedImage && (
             <div style={{ marginTop: '20px', textAlign: 'center' }}>
-              <img src={uploadedImage} alt="Uploaded Preview" style={{ maxWidth: '100%', height: 'auto', borderRadius: '5px' }} />
+              <img src={uploadedImage} alt="Uploaded Preview" style={{ maxWidth: '50%', height: 'auto', borderRadius: '5px' }} />
             </div>
           )}
 
-          <button type="submit" style={{ position:"absolute",marginTop: '80px', marginLeft:"100px",backgroundColor: 'blue', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Submit</button>
+          <button type="submit" style={{ marginRight:"20px",marginTop: '100px', backgroundColor: 'black', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Submit</button>
         </form>
       )}
     </div>
