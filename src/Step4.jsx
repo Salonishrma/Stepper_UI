@@ -37,38 +37,40 @@ function UserPhoto() {
   };
 
   return (
-    <div style={{backgroundColor: 'rgba(240, 248, 255, 0.5)', borderRadius: '5px', padding: '20px', position: 'relative', width: 'fit-content' }}>
-      {submitted ? (
-        <div style={{ textAlign: 'center' }}>
-          <h2>Thank you for submitting!</h2>
-          <p>Your data has been saved.</p>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit}>
-        
-          <h2>User Photo</h2>
-          <p>Upload your profile picture and show yourself.</p>
-          <label>
-            Add Your Photo:
-            <input type="file" accept="image/*" onChange={handleImageChange} />
-          </label>
-         
-          {photoRequiredError && (
-            <p style={{ color: 'red' }}>Please upload a photo.</p>
-          )}
+   
+      <div style={{ maxWidth: '100%' }}>
+        {submitted ? (
+          <div>
+            <h2>Thank you for submitting!</h2>
+            <p>Your data has been saved.</p>
+          </div>
+        ) : (
+          <div style={{ marginTop: '20px' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex',flexDirection: 'column', alignItems: 'left',backgroundColor: 'rgba(240, 248, 255, 0.5)', borderRadius: '15px', maxWidth: '60%' }}>
+              <h2>User Photo</h2>
+              <p>Upload your profile picture and show yourself.</p>
+              <label style={{ display: 'block', marginBottom: '10px' }}>
+                Add Your Photo:
+                <input type="file" accept="image/*" onChange={handleImageChange} />
+              </label>
+            
+              {photoRequiredError && (
+                <p style={{ color: 'red', marginBottom: '10px' }}>Please upload a photo.</p>
+              )}
 
-          {uploadedImage && (
-            <div style={{ marginTop: '20px', textAlign: 'center' }}>
-              <img src={uploadedImage} alt="Uploaded Preview" style={{ maxWidth: '50%', height: 'auto', borderRadius: '50%', border: '2px solid black' }} />
-            </div>
-          )}
-           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-        <button type="submit" style={{ marginTop: '100px', backgroundColor: 'black', borderRadius: '5px', border: 'blue', padding: '4px', color: 'white' }}>Submit</button>
-        </div>
-        </form>
-        
-      )}
-    </div>
+              {uploadedImage && (
+                <div style={{ marginTop: '20px'}}>
+                  <img src={uploadedImage} alt="Uploaded Preview" style={{ maxWidth: '100%', height: 'auto', borderRadius: '50%', border: '2px solid black' }} />
+                </div> 
+              )}
+              <div style={{ marginTop: '20px' }}>
+                <button type="submit" style={{ backgroundColor: 'black', borderRadius: '5px', border: '2px solid black', padding: '5px 5px', color: 'white' }}>Submit</button>
+              </div>
+            </form>
+          </div>
+        )}
+      </div>
+    
   );
 }
 
