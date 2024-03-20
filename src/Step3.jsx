@@ -52,34 +52,34 @@ function Experience({ onNext, data }) {
       <p>Can you talk about your past work experience?</p>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ flex: 1, marginRight: '10px' }}>
+          <div style={{ flex: 1,marginLeft:'-8px' }}>
             <label htmlFor="experience1">Experience1</label>
-            <input type="text" name="experience1" value={formData.experience1} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
+            <input type="text" name="experience1" value={formData.experience1} onChange={handleChange} style={{ width: '80%', padding: '4px' }} />
             {showExperience1Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill Experience 1.</p>}
           </div>
-          <div style={{ flex: 1, marginLeft: '10px' }}>
+          <div style={{ flex: 1 ,marginLeft:'5px'}}>
             <label htmlFor="position1">Position1</label>
-            <input type="text" name="position1" value={formData.position1} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
+            <input type="text" name="position1" value={formData.position1} onChange={handleChange} style={{ width: '80%', padding: '4px' }} />
             {showPosition1Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill Position 1.</p>}
           </div>
         </div>
         <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ flex: 1, marginRight: '10px' }}>
+          <div style={{ flex: 1,marginLeft:'-8px' }}>
             <label htmlFor="experience2">Experience2</label>
-            <input type="text" name="experience2" value={formData.experience2} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
+            <input type="text" name="experience2" value={formData.experience2} onChange={handleChange} style={{ width: '80%', padding: '4px' }} />
             {showExperience2Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill Experience 2.</p>}
           </div>
-          <div style={{ flex: 1, marginLeft: '10px' }}>
+          <div style={{ flex: 1, marginLeft: '5px' }}>
             <label htmlFor="position2">Position2</label>
-            <input type="text" name="position2" value={formData.position2} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
+            <input type="text" name="position2" value={formData.position2} onChange={handleChange} style={{ width: '80%', padding: '4px' }} />
             {showPosition2Alert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill Position 2.</p>}
           </div>
         </div>
         <div style={{ marginBottom: '20px', width: '60%' }}>
           <label htmlFor="additionalExperience">Experience3</label><br />
-          <input type="text" name="additionalExperience" value={formData.additionalExperience} onChange={handleChange} style={{ width: '70%', padding: '4px', border: '1px dashed #000' }} placeholder="Add new Experience" />
+          <input type="text" name="additionalExperience" value={formData.additionalExperience} onChange={handleChange} style={{ width: '80%', padding: '4px', border: '1px dashed #000' }} placeholder="Add new Experience" />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+        <div style={{ marginLeft:'50px',display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
           <button type="submit" style={{ backgroundColor: 'blue', borderRadius: '5px',marginTop:"80px",position:"absolute", border: 'blue', padding: '5px', color: 'white' }}>Next Step</button>
         </div>
       </div>
