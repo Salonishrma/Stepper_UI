@@ -60,11 +60,10 @@ function PersonalInfo({ onNext, data }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Your Personal Information</h1>
+      <h2>Your Personal Information</h2>
       <p>Enter your personal information to get closer to companies</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        {/* Form fields */}
-        <div style={{ display: 'flex', gap: '20px',fontSize:"14px" }}>
+        <div style={{ display: 'flex', gap: '-300px',fontSize:"14px" }}>
           <div style={{ flex: 1, marginRight: '20px' }}>
             <label>First Name</label>
             <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
@@ -76,7 +75,7 @@ function PersonalInfo({ onNext, data }) {
             {showLastNameAlert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill last name.</p>}
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '20px',fontSize:"14px" }}>
+        <div style={{ display: 'flex', gap: '-300px',fontSize:"14px" }}>
           <div style={{ flex: 1, marginRight: '20px' }}>
             <label>Phone Number</label>
             <input type="number" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} style={{ width: '70%', padding: '4px' }} />
@@ -88,7 +87,7 @@ function PersonalInfo({ onNext, data }) {
             {showEmailAlert && <p style={{ fontSize: '12px', color: 'red' }}>Please fill in email address.</p>}
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start',fontSize:"14px" }}>
+        <div style={{ display: 'flex', gap: '-300px', alignItems: 'flex-start',fontSize:"14px" }}>
           <div style={{ flex: 1, marginRight: '20px' }}>
             <label>Country</label><br />
             <select name="country" value={formData.country} onChange={handleChange} style={{ width: '75%', padding: '4px' }}>
