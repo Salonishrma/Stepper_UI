@@ -48,7 +48,7 @@ function Step2({ onNext, data }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Education</h1>
+      <h2>Education</h2>
       <p>Inform companies about your education life</p>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div style={{ marginBottom: '20px' }}>
